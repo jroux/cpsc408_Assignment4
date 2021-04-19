@@ -9,10 +9,8 @@ import sys
 
 # Execute and run program/functions
 def runAssignment4():
-    #Taking user input to create the csv file and the number of records the user wants to create
-    # fileName = input("Please input the file name to be created: ")
-    # numRecords = int(input("Please input the number of records to be created: "))
 
+    #Taking user input to create the csv file and the number of records the user wants to create
     arg1 = sys.argv[1]
     arg2 = int(sys.argv[2])
 

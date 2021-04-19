@@ -10,6 +10,7 @@ import mysql.connector
 from faker import Faker
 import csv
 import random as rand
+import sys
 
 
 #Connection to database
@@ -22,11 +23,11 @@ db = mysql.connector.connect(
 
 
 #Function that will generate the data
-def genData():
+def genData(fileName, numRecords):
     fake = Faker()
 
     #Writing to csv file and generating data
-    csv_file = open("./myscrdata.csv", "w")
+    csv_file = open("./" + fileName + ".csv", "w")
     writer = csv.writer(csv_file)
     writer.writerow(["CoachName", "AlmaMater", "YearsCoached", "UniversityName", "Address", "TeamSize", "Wins",
                      "Losses", "Ties", "Name", "JerseyNumber", "Year", "Position", "Injured", "Major", "Gpa", "Goals",
@@ -40,7 +41,7 @@ def genData():
                    "La Verne", "Occidental"]
 
     #Writing random data to file with Faker
-    for x in range(0, 50):
+    for x in range(0, numRecords):
 
         position_index = rand.randint(0, 3)
         major_index = rand.randint(0, 9)
@@ -56,11 +57,11 @@ def genData():
 
 
 #Function that normalizes the data
-def importData():
+def importData(fileName):
     mycursor = db.cursor()
 
     #Reading in data
-    with open("./myscrdata.csv") as csvfile:
+    with open("./" + fileName + ".csv") as csvfile:
         reader = csv.DictReader(csvfile)
 
         for row in reader:  #Row represents each row in file

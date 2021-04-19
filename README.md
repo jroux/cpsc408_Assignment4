@@ -13,4 +13,4 @@ c. Collaborated with Maya Mistry
 
 ADDITIONAL COMMENTS
 a. For the purpose of this assignment I used Faker to generate random data so I understand it does not corrolate directly to the provided column name (Ex. Alma Mater I used Faker.company)
-b. For the puspose of this assignment I only provided the specific teams that are in the SCIAC league so I understand that there teams with the same name. 
+b. For the puspose of this assignment I only provided the specific teams that are in the SCIAC league so I understand that there teams with the same name if the user wants to produce a large amount of records. 
